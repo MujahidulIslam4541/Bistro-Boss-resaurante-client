@@ -11,23 +11,23 @@ const Banner = () => {
   return (
     <div>
       <Carousel>
-        <div>
-          <img src={slider1} />
+        <div className="h-[600px] overflow-hidden">
+          <img src={slider1} className="h-full"/>
         </div>
-        <div>
-          <img src={slider2} />
+        <div className="h-[600px]">
+          <img src={slider2} className="h-full"/>
         </div>
-        <div>
-          <img src={slider3} />
+        <div className="h-[600px]">
+          <img src={slider3}  className="h-full"/>
         </div>
-        <div>
-          <img src={slider4} />
+        <div className="h-[600px]">
+          <img src={slider4} className="h-full"/>
         </div>
-        <div>
-          <img src={slider5} />
+        <div className="h-[600px]">
+          <img src={slider5} className="h-full"/>
         </div>
-        <div>
-          <img src={slider6} />
+        <div className="h-[600px]">
+          <img src={slider6} className="h-full"/>
         </div>
       </Carousel>
     </div>
