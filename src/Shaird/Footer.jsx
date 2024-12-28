@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div>
+      <div className="mt-20">
         <div className="block md:flex h-60">
           {/* Footer first section */}
           <div className="bg-[#1F2937] space-y-1 text-white w-full md:w-1/2 flex flex-col justify-center px-10">
