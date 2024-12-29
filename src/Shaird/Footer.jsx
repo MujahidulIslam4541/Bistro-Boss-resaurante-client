@@ -10,9 +10,9 @@ const Footer = () => {
   return (
     <>
       <div className="mt-20">
-        <div className="block md:flex h-60">
+        <div className="block md:flex h-auto md:h-60 ">
           {/* Footer first section */}
-          <div className="bg-[#1F2937] space-y-1 text-white w-full md:w-1/2 flex flex-col justify-center px-10">
+          <div className="bg-[#1F2937] space-y-1 text-white w-full md:w-1/2 flex flex-col justify-center px-10 py-10 md:py-0">
             <h2 className="text-xl font-semibold">CONTACT US</h2>
             <p>123 ABS Street, Uni 21, Bangladesh</p>
             <p>+88 123456789</p>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Footer second section */}
-          <div className="bg-[#111827] space-y-2 text-white w-full md:w-1/2 flex flex-col justify-center px-10">
+          <div className="bg-[#111827] space-y-2 text-white w-full md:w-1/2 flex flex-col justify-center px-10 py-10 md:py-0">
             <h2 className="text-xl font-semibold">Follow US</h2>
             <p>Join us on social media</p>
             <div className="flex gap-6 text-xl">

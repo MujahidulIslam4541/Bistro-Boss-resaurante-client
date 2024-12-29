@@ -5,8 +5,8 @@ import "./Featured.css";
 
 const Featured = () => {
   return (
-    <section className="featured-bg h-[600px] my-24">
-      <div className="bg-gray-900 bg-opacity-50 ">
+    <section className="featured-bg  my-24 bg-fixed backdrop:blur-sm">
+      <div className="bg-black/50 bg-opacity-50 ">
         {/* section title */}
         <SectionTitle
           heading="FROM OUR MENU"
@@ -27,7 +27,7 @@ const Featured = () => {
               real-time customer service. Proactively unleash B2C e-services
               vis-a-vis.
             </p>
-            <button className="border-b-2 mt-5 border-slate-400 rounded-md text-xl font-semibold text-white">
+            <button className="border-b-2 btn btn-outline border-0 mt-5 border-slate-400 rounded-md text-xl font-semibold text-white">
               Read More
             </button>
           </div>
