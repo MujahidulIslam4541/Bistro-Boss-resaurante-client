@@ -15,7 +15,7 @@ const Recommended = () => {
       {/* All Recommend section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* single recommended card */}
-        <div>
+        <div className="card px-4">
           <div>
             <img className="h-60" src={image1} alt="" />
           </div>
@@ -32,7 +32,7 @@ const Recommended = () => {
           </div>
         </div>
         {/* single recommended card */}
-        <div>
+        <div className="card px-4">
           <div>
             <img className="h-60" src={image2} alt="" />
           </div>
@@ -50,7 +50,7 @@ const Recommended = () => {
         </div>
         {/* single recommended card */}
         <div>
-          <div>
+          <div className="card px-4">
             <img className="h-60" src={image3} alt="" />
           </div>
 
