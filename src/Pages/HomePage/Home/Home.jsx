@@ -1,3 +1,4 @@
+import Recommended from "../../chipRecommended/Recommended";
 import Featured from "../../Fetured/Featured";
 import PopularMenu from "../../PopularMenu/PopularMenu";
 import Testimonial from "../../Testimonial/Testimonial";
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <Category></Category>
             <PopularMenu></PopularMenu>
+            <Recommended></Recommended>
             <Featured></Featured>
             <Testimonial></Testimonial>
         </div>
