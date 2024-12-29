@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../../../Shaird/Cover/Cover";
 import CoverImage from "../../../assets/menu/banner3.jpg";
-import PopularMenu from "../../HomePage/PopularMenu/PopularMenu";
 
 const Menu = () => {
   return (
@@ -15,25 +14,6 @@ const Menu = () => {
         heading="OUR MENU"
         description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
       ></Cover>
-      <PopularMenu></PopularMenu>
-      <Cover
-        img={CoverImage}
-        heading="OUR MENU"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <PopularMenu></PopularMenu>
-      <Cover
-        img={CoverImage}
-        heading="OUR MENU"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <PopularMenu></PopularMenu>
-      <Cover
-        img={CoverImage}
-        heading="OUR MENU"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <PopularMenu></PopularMenu>
     </div>
   );
 };
