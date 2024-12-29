@@ -38,49 +38,49 @@ const Category = () => {
       >
         <SwiperSlide>
           <img src={image1} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center ">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center ">
             SALADS
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image2} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center ">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center ">
             SOUPS
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image3} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center ">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center ">
             PIZZA
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image4} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center uppercase">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center uppercase">
             desserts
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image5} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center ">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center ">
             SALADS
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image2} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center ">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center ">
             SOUPS
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image3} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-16 text-center ">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-16 text-center ">
             PIZZA
           </p>
         </SwiperSlide>
         <SwiperSlide>
           <img src={image4} alt="" />
-          <p className="text-3xl font-semibold text-white shadow-md -mt-12 text-center uppercase">
+          <p className="text-3xl font-CinzelFont font-semibold text-white shadow-md -mt-12 text-center uppercase">
             desserts
           </p>
         </SwiperSlide>

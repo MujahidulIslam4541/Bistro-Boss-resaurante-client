@@ -48,7 +48,7 @@ const Navbar = () => {
               {NavOptions}
             </ul>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col font-CinzelFont">
             <a className=" text-xl">BISTRO BOSS </a>
             <span>RESTAURANT</span>
           </div>

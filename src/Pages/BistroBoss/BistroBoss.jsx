@@ -6,7 +6,7 @@ const BistroBoss = () => {
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="bg-white bg-opacity-80 p-10 rounded shadow-lg text-center max-w-3xl">
-        <h2 className="text-4xl font-bold mb-4">BISTRO BOSS</h2>
+        <h2 className="text-4xl font-bold mb-4 font-CinzelFont">BISTRO BOSS</h2>
         <p className="text-gray-700">
           Collaboratively conceptualize market positioning intellectual capital
           rather than excellent quality vectors. Intrinsicly productivate
