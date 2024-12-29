@@ -5,7 +5,7 @@ import image3 from "../../assets/menu/salad-bg.jpg";
 
 const Recommended = () => {
   return (
-    <section className="my-24">
+    <section className="my-20">
       <SectionTitle
         subheading="---Should Try---"
         heading="CHEF RECOMMENDS"
