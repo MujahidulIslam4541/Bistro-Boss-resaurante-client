@@ -8,10 +8,13 @@ import useMenu from "../../../hooks/useMenu";
 import FoodCard from "../../../Shaird/FoodCard/FoodCard";
 import { driver } from "localforage";
 import OrderTab from "../OrderTab/OrderTab";
+import { useParams } from "react-router-dom";
 
 const Order = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [menus] = useMenu();
+  const {category}=useParams()
+  console.log(category);
   const dessert = menus.filter((menu) => menu.category === "dessert");
   const salad = menus.filter((menu) => menu.category === "salad");
   const drinks = menus.filter((menu) => menu.category === "drinks");
@@ -25,7 +28,6 @@ const Order = () => {
       <Cover
         img={OrderCoverImage}
         heading="OUR SHOPE"
-        description="Would you like to try a dish?"
       ></Cover>
 
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>

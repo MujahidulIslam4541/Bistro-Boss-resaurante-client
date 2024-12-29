@@ -23,11 +23,7 @@ const Menu = () => {
       </Helmet>
 
       {/* Pages cover */}
-      <Cover
-        img={CoverImage}
-        heading="OUR MENU"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
+      <Cover img={CoverImage} heading="OUR MENU"></Cover>
 
       {/* offered menu section */}
       <SectionTitle
@@ -37,36 +33,36 @@ const Menu = () => {
       <MenuCategory items={offered}></MenuCategory>
 
       {/* dessert menu section */}
-      <Cover
-        img={dessertImage}
-        heading="DESSERTS"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <MenuCategory items={dessert}></MenuCategory>
+
+      <MenuCategory
+        coverImage={dessertImage}
+        heading="dessert"
+        items={dessert}
+      ></MenuCategory>
 
       {/* Pizza menu section */}
-      <Cover
-        img={pizzaImage}
-        heading="PIZZA"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <MenuCategory items={pizza}></MenuCategory>
+
+      <MenuCategory
+        coverImage={pizzaImage}
+        heading="pizza"
+        items={pizza}
+      ></MenuCategory>
 
       {/* Salad menu section */}
-      <Cover
-        img={saladImage}
-        heading="SALADS"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <MenuCategory items={salad}></MenuCategory>
+
+      <MenuCategory
+        coverImage={saladImage}
+        heading="salad"
+        items={salad}
+      ></MenuCategory>
 
       {/* soup menu section */}
-      <Cover
-        img={soupImage}
-        heading="SOUPS"
-        description="Compellingly procrastinate enterprise-wide relationships rather than user-centric synergy. Assertively enable e-business infomediaries."
-      ></Cover>
-      <MenuCategory items={soup}></MenuCategory>
+
+      <MenuCategory
+        coverImage={soupImage}
+        heading="soup"
+        items={soup}
+      ></MenuCategory>
     </div>
   );
 };

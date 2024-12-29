@@ -1,5 +1,5 @@
 import { Parallax } from "react-parallax";
-const Cover = ({ img, heading, description }) => {
+const Cover = ({ img, heading }) => {
   return (
     <Parallax
       blur={{ min: -50, max: 50 }}
@@ -14,7 +14,7 @@ const Cover = ({ img, heading, description }) => {
         <div className="hero-content bg-gray-800 bg-opacity-60 w-2/3 py-10 text-neutral-content text-center">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold text-white">{heading}</h1>
-            <p className="mb-5">{description}</p>
+            <p className="mb-5">Holisticly recaptiualize effective e-tailers for value-added platforms. Energistically engineer performance based experiences.</p>
           </div>
         </div>
       </div>
