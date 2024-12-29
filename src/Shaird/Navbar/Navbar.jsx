@@ -13,7 +13,7 @@ const Navbar = () => {
         <Link>DASHBOARD</Link>
       </li>
       <li>
-        <Link>OUR MENU</Link>
+        <Link to='/menu'>OUR MENU</Link>
       </li>
       <li>
         <Link>OUR SHOP</Link>
@@ -22,7 +22,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar max-w-screen-xl mx-auto fixed z-50 bg-gray-900 bg-opacity-30 text-white">
+      <div className="navbar font-CinzelFont max-w-screen-xl mx-auto fixed z-50 bg-gray-900 bg-opacity-30 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
