@@ -1,7 +1,8 @@
-import SectionTitle from "../../Components/sectionTitle/sectionTitle";
-import image1 from "../../assets/menu/dessert-bg.jpeg";
-import image2 from "../../assets/menu/pizza-bg.jpg";
-import image3 from "../../assets/menu/salad-bg.jpg";
+
+import SectionTitle from "../../../Components/sectionTitle/sectionTitle";
+import image1 from '../../../assets/menu/dessert-bg.jpeg'
+import image2 from '../../../assets/menu/pizza-bg.jpg'
+import image3 from '../../../assets/menu/salad-bg.jpg'
 
 const Recommended = () => {
   return (

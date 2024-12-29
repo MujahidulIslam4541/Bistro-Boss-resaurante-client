@@ -1,4 +1,4 @@
-import image from "../../assets/home/chef-service.jpg";
+import image from "../../../assets/home/chef-service.jpg";
 const BistroBoss = () => {
   return (
     <div

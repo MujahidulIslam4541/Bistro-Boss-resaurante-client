@@ -1,11 +1,11 @@
-import BistroBoss from "../../BistroBoss/BistroBoss";
-import Recommended from "../../chipRecommended/Recommended";
-import ContactUs from "../../CotactUs/ContactUs";
-import Featured from "../../Fetured/Featured";
-import PopularMenu from "../../PopularMenu/PopularMenu";
-import Testimonial from "../../Testimonial/Testimonial";
 import Banner from "../Banner/Banner";
+import BistroBoss from "../BistroBoss/BistroBoss";
 import Category from "../Category/Category";
+import Recommended from "../chipRecommended/Recommended";
+import ContactUs from "../CotactUs/ContactUs";
+import Featured from "../Fetured/Featured";
+import PopularMenu from "../PopularMenu/PopularMenu";
+import Testimonial from "../Testimonial/Testimonial";
 
 
 const Home = () => {

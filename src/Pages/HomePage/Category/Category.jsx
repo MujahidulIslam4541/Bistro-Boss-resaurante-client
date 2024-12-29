@@ -13,6 +13,7 @@ import image3 from "../../../assets/home/slide3.jpg";
 import image4 from "../../../assets/home/slide4.jpg";
 import image5 from "../../../assets/home/slide5.jpg";
 import SectionTitle from "../../../Components/sectionTitle/sectionTitle";
+// import SectionTitle from "../../../Components/sectionTitle/sectionTitle";
 
 const Category = () => {
   return (

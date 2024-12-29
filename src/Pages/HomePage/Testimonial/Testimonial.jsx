@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SectionTitle from "../../Components/sectionTitle/sectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -10,6 +9,7 @@ import { Navigation } from "swiper/modules";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { RiClockwise2Fill } from "react-icons/ri";
+import SectionTitle from "../../../Components/sectionTitle/sectionTitle";
 
 const Testimonial = () => {
   // Loaded reviews in json file
