@@ -1,3 +1,4 @@
+import BistroBoss from "../../BistroBoss/BistroBoss";
 import Recommended from "../../chipRecommended/Recommended";
 import ContactUs from "../../CotactUs/ContactUs";
 import Featured from "../../Fetured/Featured";
@@ -12,6 +13,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Category></Category>
+            <BistroBoss></BistroBoss>
             <PopularMenu></PopularMenu>
             <ContactUs></ContactUs>
             <Recommended></Recommended>
