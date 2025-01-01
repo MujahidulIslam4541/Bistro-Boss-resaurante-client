@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
   LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
+import { AuthContext } from "../../provider/AuthProvider";
+import { Link } from "react-router-dom";
 const Login = () => {
+  const { loginUser } = useContext(AuthContext);
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
@@ -19,6 +22,14 @@ const Login = () => {
     const email = from.email.value;
     const password = from.password.value;
     console.log(email, password);
+
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   const handleValidateCaptcha = () => {
@@ -51,7 +62,6 @@ const Login = () => {
                 placeholder="email"
                 name="email"
                 className="input input-bordered"
-                
               />
             </div>
             <div className="form-control">
@@ -63,7 +73,6 @@ const Login = () => {
                 placeholder="password"
                 name="password"
                 className="input input-bordered"
-                
               />
             </div>
             <div className="form-control">
@@ -79,7 +88,6 @@ const Login = () => {
                 name="captcha"
                 ref={captchaValidate}
                 className="input input-bordered"
-                
               />
               <button
                 onClick={handleValidateCaptcha}
@@ -103,6 +111,7 @@ const Login = () => {
               />
             </div>
           </form>
+          <p className="text-sm text-center pb-4 ">New Here <Link className="text-orange-600" to='/signUp'>Create New Account</Link></p>
         </div>
       </div>
     </div>
