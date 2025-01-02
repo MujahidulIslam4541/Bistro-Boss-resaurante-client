@@ -8,6 +8,7 @@ import {
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import GoogleLogin from "../../Components/GoogleLogin/GoogleLogin";
 const Login = () => {
   const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -66,6 +67,7 @@ const Login = () => {
         <div className="text-center md:w-1/2 lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
           <p className="py-6">
+
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
@@ -125,7 +127,8 @@ const Login = () => {
               />
             </div>
           </form>
-          <p className="text-sm text-center pb-4 ">
+          <GoogleLogin></GoogleLogin>
+          <p className="text-sm text-center py-4 ">
             New Here{" "}
             <Link className="text-orange-600" to="/signUp">
               Create New Account

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -84,9 +85,20 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{NavOptions}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/signUp" className="btn btn-primary">
-            SignUp
-          </Link>
+          {user && user?.email ? (
+            <div className="relative group">
+              <img
+                className="w-10 h-10 rounded-full"
+                src={user.photoURL}
+                alt=""
+              />
+              <p  className="text-white absolute w-40 py-1 px-2 bg-gray-900 transition -translate-x-2/3 rounded-md -translate-y-2 delay-300 opacity-0 group-hover:opacity-100">{user.displayName}</p>
+            </div>
+          ) : (
+            <>
+              <FaRegUserCircle size={40} />
+            </>
+          )}
         </div>
       </div>
     </>
