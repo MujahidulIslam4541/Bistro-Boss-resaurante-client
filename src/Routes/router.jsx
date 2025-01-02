@@ -8,6 +8,8 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import Order from "../Pages/Order/Order/Order";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/signUp/SignUp";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import PrivetRouter from "./PrivetRouter";
 
 
 const router = createBrowserRouter([
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
         {
           path:'order/:category',
           element:<Order></Order>
+        },
+        {
+          path:'/dashboard',
+          element:<PrivetRouter><Dashboard></Dashboard></PrivetRouter>
         },
         {
           path:'login',
