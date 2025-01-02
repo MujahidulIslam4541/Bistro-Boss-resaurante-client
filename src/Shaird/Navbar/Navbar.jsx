@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaCartPlus, FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -85,6 +85,15 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{NavOptions}</ul>
         </div>
         <div className="navbar-end">
+
+          {/* Add to card button */}
+          <button className="flex gap-2 mr-2">
+            <div className="badge badge-primary flex gap-1 py-3">
+              <FaCartPlus /> +0
+            </div>
+          </button>
+
+          {/* User profile section */}
           {user && user?.email ? (
             <div className="relative group">
               <img
@@ -92,7 +101,9 @@ const Navbar = () => {
                 src={user.photoURL}
                 alt=""
               />
-              <p  className="text-white absolute w-40 py-1 px-2 bg-gray-900 transition -translate-x-2/3 rounded-md -translate-y-2 delay-300 opacity-0 group-hover:opacity-100">{user.displayName}</p>
+              <p className="text-white absolute w-40 py-1 px-2 bg-gray-900 transition -translate-x-2/3 rounded-md -translate-y-2 delay-300 opacity-0 group-hover:opacity-100">
+                {user.displayName}
+              </p>
             </div>
           ) : (
             <>
