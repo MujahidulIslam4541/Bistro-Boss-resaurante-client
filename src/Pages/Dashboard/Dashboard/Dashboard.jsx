@@ -1,22 +1,27 @@
 import React from "react";
 import { FaAd, FaCalendar, FaHome, FaVoicemail } from "react-icons/fa";
-import { FaBookBookmark, FaCartShopping, FaMarsAndVenus, FaShop } from "react-icons/fa6";
+import {
+  FaBookBookmark,
+  FaCartShopping,
+  FaMarsAndVenus,
+  FaShop,
+} from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="flex ">
+    <div className="flex gap-8 ">
+        {/* user dashboard sidebar */}
       <div className="w-64 min-h-screen bg-orange-300 font-CinzelFont text-black">
+        <div className="text-center py-4">
+          <h2 className="text-xl font-semibold ">BISTRO BOSS</h2>
+          <p className="text-xl">RESTAURANT</p>
+        </div>
         <ul className="menu">
-          <div className="text-center py-4">
-            <h2 className="text-xl font-semibold ">BISTRO BOSS</h2>
-            <p className="text-xl">RESTAURANT</p>
-          </div>
-
           <li>
             <NavLink to="/dashboard/userHome">
               <FaHome />
-             USER HOME
+              USER HOME
             </NavLink>
           </li>
           <li>
@@ -70,7 +75,10 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
-      <div className="flex">
+
+
+      {/* user dashboard outlet */}
+      <div className="flex-1 w-full">
         <Outlet></Outlet>
       </div>
     </div>
