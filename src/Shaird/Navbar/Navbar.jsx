@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaCartPlus, FaRegUserCircle } from "react-icons/fa";
+import UseCarts from "../../hooks/UseCarts";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart]=UseCarts()
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -89,7 +91,7 @@ const Navbar = () => {
           {/* Add to card button */}
           <button className="flex gap-2 mr-2">
             <div className="badge badge-primary flex gap-1 py-3">
-              <FaCartPlus /> +0
+              <FaCartPlus /> +{cart.length}
             </div>
           </button>
 
