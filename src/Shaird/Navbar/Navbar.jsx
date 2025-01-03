@@ -6,7 +6,7 @@ import UseCarts from "../../hooks/UseCarts";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [cart]=UseCarts()
+  const [cart] = UseCarts();
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -30,9 +30,9 @@ const Navbar = () => {
       <li>
         <Link to="/order/dessert">OUR SHOP</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/dashboard">DASHBOARD</Link>
-      </li>
+      </li> */}
 
       {user && user?.email ? (
         <>
@@ -87,13 +87,14 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{NavOptions}</ul>
         </div>
         <div className="navbar-end">
-
           {/* Add to card button */}
-          <button className="flex gap-2 mr-2">
-            <div className="badge badge-primary flex gap-1 py-3">
-              <FaCartPlus /> +{cart.length}
-            </div>
-          </button>
+          <Link to='/dashboard/cart'>
+            <button className="flex gap-2 mr-2">
+              <div className="badge badge-primary flex gap-1 py-3">
+                <FaCartPlus /> +{cart.length}
+              </div>
+            </button>
+          </Link>
 
           {/* User profile section */}
           {user && user?.email ? (
