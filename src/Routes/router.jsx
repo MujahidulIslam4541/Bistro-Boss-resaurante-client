@@ -45,15 +45,19 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path:'dashboard',
-    element:<Dashboard></Dashboard>,
-    children:[
+    path: "dashboard",
+    element: (
+      <PrivetRouter>
+        <Dashboard></Dashboard>
+      </PrivetRouter>
+    ),
+    children: [
       {
-        path:'cart',
-        element:<Cart></Cart>
-      }
-    ]
-  }
+        path: "cart",
+        element: <Cart></Cart>,
+      },
+    ],
+  },
 ]);
 
 export default router;

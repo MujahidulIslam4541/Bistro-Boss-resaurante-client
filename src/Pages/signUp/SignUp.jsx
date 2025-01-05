@@ -5,8 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import GoogleLogin from "../../Components/GoogleLogin/GoogleLogin";
+import UseAxiosPublic from "../../hooks/UseAxiosPublic";
 
 const SignUp = () => {
+  const axiosPublic = UseAxiosPublic();
   const { createUser, UpdateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
@@ -16,18 +18,23 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    createUser(data.email, data.password).then((result) => {
-      console.log(result.user);
-      UpdateUserProfile(data.name, data.photoURL)
-      Swal.fire({
-        title: "Success",
-        text: "User SignUp Successfully",
-        icon: "success"
-      });
-      reset();
-      navigate("/").catch((error) => {
-        console.log(error);
+    createUser(data.email, data.password).then(() => {
+      UpdateUserProfile(data.name, data.photoURL);
+
+      // saved user information in database
+      const userInfo = { name: data.name, email: data.email };
+      axiosPublic.post("/users", userInfo).then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Success",
+            text: "User SignUp Successfully",
+            icon: "success",
+          });
+          reset();
+          navigate("/").catch((error) => {
+            console.log(error);
+          });
+        }
       });
     });
   };
