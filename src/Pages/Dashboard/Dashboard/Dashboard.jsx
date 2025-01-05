@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAd, FaCalendar, FaHome, FaVoicemail } from "react-icons/fa";
+import { FaAd, FaCalendar, FaEnvelope, FaHome, FaVoicemail } from "react-icons/fa";
 import {
   FaBookBookmark,
   FaCartShopping,
@@ -9,6 +9,8 @@ import {
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
+  // TODO:get isAdmin value from database
+  const isAdmin=true;
   return (
     <div className="flex gap-8 ">
         {/* user dashboard sidebar */}
@@ -69,7 +71,7 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="/contact">
-              <FaVoicemail></FaVoicemail>
+              <FaEnvelope></FaEnvelope>
               CONTACT
             </NavLink>
           </li>

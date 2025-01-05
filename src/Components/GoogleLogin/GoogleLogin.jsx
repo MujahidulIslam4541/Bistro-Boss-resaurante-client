@@ -1,17 +1,22 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import UseAxiosPublic from "../../hooks/UseAxiosPublic";
 
 const GoogleLogin = () => {
   const { signInWithGoogle } = useContext(AuthContext);
-
+  const axiosPublic = UseAxiosPublic();
   const handleGoogleLogin = () => {
-    signInWithGoogle()
-    .then(()=>{
-        console.log(
-        'Google Login Success'
-        );
-    })
+    signInWithGoogle().then((result) => {
+      console.log("Google Login Success");
+      const userInfo = {
+        email: result.user?.email,
+        name: result.user?.displayName,
+      };
+      axiosPublic.post("/users", userInfo).then((res) => {
+        console.log(res.data);
+      });
+    });
   };
   return (
     <div className=" px-8">
