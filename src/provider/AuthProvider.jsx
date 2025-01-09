@@ -10,9 +10,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+import UseAxiosPublic from "../hooks/UseAxiosPublic";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
+  const axiosPublic=UseAxiosPublic()
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
@@ -49,6 +51,17 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log("currentUser", currentUser);
+      if(currentUser){
+        const userInfo={email:currentUser?.email}
+        axiosPublic.post('/jwt',userInfo).then(res=>{
+          if(res.data.token){
+            localStorage.setItem('access-token',res.data.token)
+          }
+        })
+      }
+      else{
+        localStorage.removeItem('access-token')
+      }
       setLoading(false);
     });
     return () => {

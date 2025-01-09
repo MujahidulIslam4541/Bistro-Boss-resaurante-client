@@ -17,10 +17,11 @@ import {
   FaShop,
 } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
+import UseAdmin from "../../../hooks/UseAdmin";
 
 const Dashboard = () => {
   // TODO:get isAdmin value from database
-  const isAdmin = true;
+  const [isAdmin] = UseAdmin();
   return (
     <div className="flex gap-8 ">
       {/* user dashboard sidebar */}
