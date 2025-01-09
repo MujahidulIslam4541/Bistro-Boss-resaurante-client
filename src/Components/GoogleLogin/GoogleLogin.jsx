@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import UseAxiosPublic from "../../hooks/UseAxiosPublic";
+import { useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
   const { signInWithGoogle } = useContext(AuthContext);
   const axiosPublic = UseAxiosPublic();
+  const navigate=useNavigate()
   const handleGoogleLogin = () => {
     signInWithGoogle().then((result) => {
-      console.log("Google Login Success");
+      navigate('/')
       const userInfo = {
         email: result.user?.email,
         name: result.user?.displayName,
