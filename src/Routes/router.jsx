@@ -9,6 +9,7 @@ import SignUp from "../Pages/signUp/SignUp";
 import PrivetRouter from "./PrivetRouter";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
+import Allusers from "../Pages/Dashboard/Dashboard/Allusers/Allusers";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         path: "cart",
         element: <Cart></Cart>,
       },
+
+      {
+        path:'users',
+        element:<Allusers></Allusers>
+      }
     ],
   },
 ]);
