@@ -1,16 +1,20 @@
-import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
 import SectionTitle from "../../../../Components/sectionTitle/sectionTitle";
-import { FaUtensils } from "react-icons/fa";
 import UseAxiosPublic from "../../../../hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../hooks/UseAxiosSecure";
-import toast from "react-hot-toast";
-// import { SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { FaEdit } from "react-icons/fa";
+import Swal from "sweetalert2";
+
 const image_token = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_token}`;
-const AddItem = () => {
+const UpdateItem = () => {
+  const { name, category, price, recipe, _id } = useLoaderData();
+  console.log(name);
+
   const axiosPublic = UseAxiosPublic();
-  const { register, handleSubmit ,reset} = useForm();
-  const axiosSecure=UseAxiosSecure()
+  const { register, handleSubmit } = useForm();
+  const axiosSecure = UseAxiosSecure();
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -22,21 +26,24 @@ const AddItem = () => {
         "content-type": "multipart/form-data",
       },
     });
-    if(res.data.success){
+    if (res.data.success) {
       // now send the menu item to the server with image url
-      const menuItem={
-        name:data.name,
-        category:data.category,
-        recipe:data.recipe,
+      const menuItem = {
+        name: data.name,
+        category: data.category,
+        recipe: data.recipe,
         price: parseFloat(data.price),
-        image:res.data.data.display_url
-      }
+        image: res.data.data.display_url,
+      };
 
-      const menuRes=await axiosSecure.post('/menu',menuItem)
+      const menuRes = await axiosSecure.patch(`/menu/${_id}`, menuItem);
       console.log(menuRes.data);
-      if(menuRes.data.insertedId){
-        reset()
-        toast.success('menu successfully Posted')
+      if (menuRes.data.modifiedCount > 0) {
+        Swal.fire({
+          title: "Success",
+          text: `${name} is Updated`,
+          icon: "success",
+        });
       }
     }
 
@@ -45,8 +52,8 @@ const AddItem = () => {
   return (
     <div>
       <SectionTitle
-        heading={"add an item"}
-        subheading={"---What's New---"}
+        heading={"update item"}
+        subheading="---Harry Up---"
       ></SectionTitle>
 
       <div>
@@ -61,6 +68,7 @@ const AddItem = () => {
             <input
               {...register("name", { required: true })}
               type="text"
+              defaultValue={name}
               placeholder="Recipe Name"
               className="input input-ghost input-bordered w-full"
             />
@@ -72,7 +80,7 @@ const AddItem = () => {
                 <span>Category*</span>
               </label>
               <select
-                defaultValue="default"
+                defaultValue={category}
                 {...register("category", { required: true })}
                 className="select select-bordered w-full"
               >
@@ -95,6 +103,7 @@ const AddItem = () => {
               <input
                 {...register("price", { required: true })}
                 type="text"
+                defaultValue={price}
                 placeholder="Recipe Price"
                 className="input input-ghost input-bordered w-full"
               />
@@ -109,6 +118,7 @@ const AddItem = () => {
             <textarea
               placeholder="Recipe Details"
               rows="5"
+              defaultValue={recipe}
               className="textarea textarea-bordered w-full"
               {...register("recipe", { required: true })}
             ></textarea>
@@ -122,7 +132,7 @@ const AddItem = () => {
           </div>
           <div>
             <button className="btn text-white font-semibold  bg-[#896124] ">
-              Add Item <FaUtensils className="ml-2" />
+              Update Item <FaEdit size={16}></FaEdit>
             </button>
           </div>
         </form>
@@ -131,4 +141,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default UpdateItem;
