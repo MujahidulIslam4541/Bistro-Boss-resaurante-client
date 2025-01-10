@@ -3,9 +3,10 @@ import UseCarts from "../../../hooks/UseCarts";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const [cart,refetch] = UseCarts();
+  const [cart, refetch] = UseCarts();
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   const axiosSecure = UseAxiosSecure();
   const handleDelete = (id) => {
@@ -20,13 +21,13 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/carts/${id}`).then((res) => {
-          if (res.data.deletedCount>0) {
+          if (res.data.deletedCount > 0) {
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
               icon: "success",
             });
-            refetch()
+            refetch();
           }
         });
       }
@@ -46,7 +47,15 @@ const Cart = () => {
       <div className="flex justify-evenly">
         <h2 className="text-2xl font-semibold">My cart:{cart.length} </h2>
         <h2 className="text-2xl font-semibold">Total Price:{totalPrice} </h2>
-        <button className="btn btn-primary">Pay</button>
+        {cart.length ? (
+          <Link to="/dashboard/payment">
+            <button className="btn bg-[#D99904]">Pay</button>
+          </Link>
+        ) : (
+          <button disabled className="btn bg-[#D99904]">
+            Pay
+          </button>
+        )}
       </div>
 
       {/* table cart item show */}

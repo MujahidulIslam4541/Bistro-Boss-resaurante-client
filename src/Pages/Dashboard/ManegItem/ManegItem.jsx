@@ -43,7 +43,7 @@ const ManageItem = () => {
         heading="manage all items"
         subheading="---Harry Up---"
       ></SectionTitle>
-
+      <h2 className="text-3xl font-bold pb-5">Total Item :{menu.length}</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
