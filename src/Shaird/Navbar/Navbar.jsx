@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaCartPlus, FaRegUserCircle } from "react-icons/fa";
 import UseCarts from "../../hooks/UseCarts";
+import UseAdmin from "../../hooks/UseAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = UseAdmin();
   const [cart] = UseCarts();
   const handleLogOut = () => {
     logOut()
@@ -19,10 +21,7 @@ const Navbar = () => {
   const NavOptions = (
     <>
       <li>
-        <Link>Home</Link>
-      </li>
-      <li>
-        <Link>CONTACT US</Link>
+        <Link>HOME</Link>
       </li>
       <li>
         <Link to="/menu">OUR MENU</Link>
@@ -30,9 +29,23 @@ const Navbar = () => {
       <li>
         <Link to="/order/dessert">OUR SHOP</Link>
       </li>
-      {/* <li>
-        <Link to="/dashboard">DASHBOARD</Link>
-      </li> */}
+      {/* check User and Admin */}
+      {user && isAdmin ? (
+        <li>
+          <Link to="/dashboard/adminHome">DASHBOARD</Link>
+        </li>
+      ) : (
+        ""
+      )}
+
+      {/* Check Only User */}
+      {user && !isAdmin ? (
+        <li>
+          <Link to="/dashboard/userHome">DASHBOARD</Link>
+        </li>
+      ) : (
+        ""
+      )}
 
       {user && user?.email ? (
         <>
@@ -88,7 +101,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {/* Add to card button */}
-          <Link to='/dashboard/cart'>
+          <Link to="/dashboard/cart">
             <button className="flex gap-2 mr-2">
               <div className="badge badge-primary flex gap-1 py-3">
                 <FaCartPlus /> +{cart.length}

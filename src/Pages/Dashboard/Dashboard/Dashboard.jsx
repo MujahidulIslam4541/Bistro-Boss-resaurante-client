@@ -118,12 +118,6 @@ const Dashboard = () => {
               SHOPE
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/contact">
-              <FaEnvelope></FaEnvelope>
-              CONTACT
-            </NavLink>
-          </li>
         </ul>
       </div>
 
