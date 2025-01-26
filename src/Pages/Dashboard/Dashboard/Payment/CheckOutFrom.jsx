@@ -85,6 +85,7 @@ const CheckOutFrom = () => {
         status: "pending",
       };
       const res = await axiosSecure.post("/payment", payment);
+      console.log(payment.menuItemId);
       if(res.data?.paymentResult?.insertedId){
         toast.success('Payment successful')
         navigate('/dashboard/paymentHistory')

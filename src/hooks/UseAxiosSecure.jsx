@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 export const AxiosSecure=axios.create({
-    baseURL:('http://localhost:5000')
+    baseURL:('https://bistro-boss-server-theta-ashy.vercel.app')
 })
 const UseAxiosSecure = () => {
     return AxiosSecure;
