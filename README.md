@@ -27,10 +27,6 @@ Welcome to the Bistro Boss website! This is a feature-rich, modern, and responsi
 - **Version Control**: Git and GitHub for source code management and collaboration.  
 - **Tools**: Vite for development, deployment tools like Netlify or Vercel (based on hosting preferences).  
 
-## Live Site  
-
-Explore the live version of the Bistro Boss website here: [https://bistro-boss-restaurante.web.app]()  
-*(Replace `#` with the live site URL)*  
 
 ## How to Run  
 
