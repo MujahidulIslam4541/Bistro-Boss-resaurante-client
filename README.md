@@ -29,8 +29,8 @@ Welcome to the Bistro Boss website! This is a feature-rich, modern, and responsi
 
 ## Live Site  
 
-Explore the live version of the Bistro Boss website here: [Bistro Boss Live Site]()  
-*(Replace `https://bistro-boss-restaurante.web.app` with the live site URL)*  
+Explore the live version of the Bistro Boss website here: [https://bistro-boss-restaurante.web.app]()  
+*(Replace `#` with the live site URL)*  
 
 ## How to Run  
 
